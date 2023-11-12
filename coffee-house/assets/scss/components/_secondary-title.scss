@@ -1,0 +1,7 @@
+.secondary-title {
+  @include font-inter(
+    $font-size: 6rem,
+    $font-weight: 600,
+    $color: $color-text-dark
+  );
+}

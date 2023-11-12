@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.logo {
+}
+.logo__img {
+  display: block;
+  width: 100px;
+  height: 60px;
+  background-image: url('../img/logo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header__nav {
+  display: flex;
+  column-gap: 40px;
+}
+.header__nav-item {
+}
+.header__nav-link {
+  @include font-inter($font-size: 1.6rem, $font-weight: 600);
+}
+.header__menu {
+  display: flex;
+  column-gap: 8px;
+  cursor: pointer;
+}
+.header__menu-text {
+  @include font-inter($font-size: 1.6rem, $font-weight: 600);
+
+  background-color: transparent;
+  border: none;
+  cursor: inherit;
+}

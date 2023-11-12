@@ -1,0 +1,7 @@
+.primary-title {
+  @include font-inter(
+    $font-size: 7.2rem,
+    $font-weight: 600,
+    $color: $color-text-light
+  );
+}

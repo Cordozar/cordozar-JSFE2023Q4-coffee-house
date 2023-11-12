@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="stylesheet" href="../assets/scss/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="wrapper">
     <header class="header">
       <h1 class="logo">
-        <a class="logo__img" href=""></a>
+        <a class="logo__img" href="./index.html"></a>
       </h1>
       <ul class="header__nav">
         <li class="header__nav-item">
@@ -27,17 +31,19 @@
           <a href="" class="header__nav-link">Contact us</a>
         </li>
       </ul>
-      <button class="header__menu">
-        Menu
+      <div class="header__menu">
+        <button class="header__menu-text">
+          Menu
+        </button>
         <span class="cup"></span>
-      </button>
+      </div>
     </header>
   </div>
 
   <main>
     <div class="wrapper">
       <section class="enjoy">
-        <h2 class="title enjoy__title">
+        <h2 class="enjoy__title primary-title">
           <span class="text-accent">Enjoy</span> premium coffee at our charming cafe
         </h2>
         <p class="enjoy__dicription">
@@ -53,14 +59,14 @@
 
     <div class="wrapper">
       <section class="favourites-coffee">
-        <h3 class="favourites-coffee__desciption">
+        <h3 class="favourites-coffee__title secondary-title">
           Choose your <span class="text-accent">favorite</span> coffee
         </h3>
         <div class="slider">
           <div class="slider__wrapper">
             <div class="slider__content">
               <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-1.jpg" alt="slide">
+                <img class="slide__img" src="../assets/img/slider/coffee-slider-1.png" alt="slide">
                 <div class="slide__product">
                   S’mores Frappuccino
                 </div>
@@ -73,7 +79,7 @@
                 </div>
               </div>
               <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-2.jpg" alt="slide">
+                <img class="slide__img" src="../assets/img/slider/coffee-slider-2.png" alt="slide">
                 <div class="slide__product">
                   Caramel Macchiato
                 </div>
@@ -86,7 +92,7 @@
                 </div>
               </div>
               <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-3.jpg" alt="slide">
+                <img class="slide__img" src="../assets/img/slider/coffee-slider-3.png" alt="slide">
                 <div class="slide__product">
                   Ice coffee
                 </div>
@@ -108,7 +114,7 @@
 
     <div class="wrapper">
       <section class="about">
-        <h3 class="about__description">
+        <h3 class="about__title secondary-title">
           Resource is <span class="text-accent">the perfect and cozy place</span> where you can enjoy a variety of hot
           beverages, relax, catch up with friends, or get some work done.
         </h3>
@@ -124,7 +130,7 @@
     <div class="wrapper">
       <section class="mobile-app">
         <div class="mobile-app__content">
-          <h3 class="mobile-app__title">
+          <h3 class="mobile-app__title secondary-title">
             <span class="text-accent">Download</span> our apps to start ordering
           </h3>
           <p class="mobile-app__discription">
@@ -161,11 +167,11 @@
       <h4 class="footer__subtitle">
         Contact us
       </h4>
-      <a class="footer__address footer__contacts" href="">8558 Green Rd.,  LA</a>
+      <a class="footer__address footer__contacts" href="">8558 Green Rd., LA</a>
       <a class="footer__tel footer__contacts" href="tel:+16035550123">+1 (603) 555-0123</a>
-      <span class="footer__working-hours">Mon-Sat: 9:00 AM – 23:00 PM</span>         
+      <span class="footer__working-hours">Mon-Sat: 9:00 AM – 23:00 PM</span>
     </div>
   </footer>
-</body> 
+</body>
 
 </html>

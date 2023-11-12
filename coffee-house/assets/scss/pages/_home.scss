@@ -1,0 +1,15 @@
+.enjoy {
+  border-radius: 40px;
+  background-image: url('../img/Home/enjoy_bg.jfif');
+  padding: 100px;
+}
+.enjoy__title {
+  margin-bottom: 40px;
+}
+.enjoy__dicription {
+  @include font-inter ($font-size: 16px);
+}
+.enjoy__btn {
+}
+.cup {
+}
