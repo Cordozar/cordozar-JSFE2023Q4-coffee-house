@@ -1,0 +1,114 @@
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 100px;
+  column-gap: 100px;
+  background-color: $color-bg-container;
+  border-radius: 40px;
+}
+.footer__column {
+  width: 100%;
+}
+.footer__title {
+  margin-bottom: 40px;
+}
+.footer__social {
+  display: inline-flex;
+  column-gap: 12px;
+}
+.footer__social-item {
+}
+.footer__social-link {
+  @include transition(background-image, background-color);
+
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 1px solid $color-border-light;
+  border-radius: 50%;
+
+  .footer__social-item:nth-child(1) & {
+    background-image: url('../img/footer/footer-twitter.svg');
+
+    &:hover {
+      background-color: $color-bg-body;
+      background-image: url('../img/footer/footer-twitter-hover.svg');
+    }
+  }
+  .footer__social-item:nth-child(2) & {
+    background-image: url('../img/footer/footer-instagram.svg');
+
+    &:hover {
+      background-color: $color-bg-body;
+      background-image: url('../img/footer/footer-instagram-hover.svg');
+    }
+  }
+  .footer__social-item:nth-child(3) & {
+    background-image: url('../img/footer/footer-facebook.svg');
+
+    &:hover {
+      background-color: $color-bg-body;
+      background-image: url('../img/footer/footer-facebook-hover.svg');
+    }
+  }
+}
+.footer__subtitle {
+  @include font-inter(
+    $font-weight: 600,
+    $font-size: 24px,
+    $color: $color-border-light
+  );
+
+  margin-bottom: 40px;
+}
+.footer__flex-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.footer__contacts {
+  @include font-inter(
+    $font-size: 16px,
+    $font-weight: 600,
+    $color: $color-text-light
+  );
+
+  position: relative;
+  display: inline-block;
+  width: min-content;
+  padding-left: 28px;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2) {
+    @extend %underlineAnimationLight;
+  }
+
+  &:nth-child(1)::after {
+    background-image: url('../img/footer/footer-location.svg');
+  }
+  &:nth-child(2)::after {
+    background-image: url('../img/footer/footer-phone.svg');
+  }
+  &:nth-child(3)::after {
+    background-image: url('../img/footer/footer-clock.svg');
+  }
+}
+.footer__address {
+}
+.footer__tel {
+}
+.footer__working-hours {
+}

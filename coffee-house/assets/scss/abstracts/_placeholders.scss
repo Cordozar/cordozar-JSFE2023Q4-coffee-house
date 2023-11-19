@@ -1,0 +1,7 @@
+%underlineAnimationDark {
+  @include underlineAnimation($color-text-dark);
+}
+
+%underlineAnimationLight {
+  @include underlineAnimation($color-bg-body);
+}

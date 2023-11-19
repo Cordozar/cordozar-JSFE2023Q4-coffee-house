@@ -51,8 +51,8 @@
           for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.
         </p>
         <button class="enjoy__btn">
-          Menu
-          <span class="cup"></span>
+          <span class="enjoy__btn-text">Menu</span>
+          <span class="cup cup_enjoy"></span>
         </button>
       </section>
     </div>
@@ -63,50 +63,56 @@
           Choose your <span class="text-accent">favorite</span> coffee
         </h3>
         <div class="slider">
-          <div class="slider__wrapper">
-            <div class="slider__content">
-              <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-1.png" alt="slide">
-                <div class="slide__product">
-                  S’mores Frappuccino
+          <div class="slider__content">
+            <div class="slider__arrow slider__arrow_left"></div>
+            <div class="slider__wrapper">
+              <div class="slider__inner">
+                <div class="slider__slide slide">
+                  <img class="slide__img" src="../assets/img/slider/coffee-slider-1.png" alt="slide">
+                  <div class="slide__product">
+                    S’mores Frappuccino
+                  </div>
+                  <p class="slide__discription">
+                    This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with
+                    oat milk.
+                  </p>
+                  <div class="slide__price">
+                    $5.50
+                  </div>
                 </div>
-                <p class="slide__discription">
-                  This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with
-                  oat milk.
-                </p>
-                <div class="slide__price">
-                  $5.50
+                <div class="slider__slide slide">
+                  <img class="slide__img" src="../assets/img/slider/coffee-slider-2.png" alt="slide">
+                  <div class="slide__product">
+                    Caramel Macchiato
+                  </div>
+                  <p class="slide__discription">
+                    Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick
+                    foam.
+                  </p>
+                  <div class="slide__price">
+                    $5.00
+                  </div>
                 </div>
-              </div>
-              <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-2.png" alt="slide">
-                <div class="slide__product">
-                  Caramel Macchiato
-                </div>
-                <p class="slide__discription">
-                  Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick
-                  foam.
-                </p>
-                <div class="slide__price">
-                  $5.00
-                </div>
-              </div>
-              <div class="slider__slide slide">
-                <img class="slide__img" src="../assets/img/slider/coffee-slider-3.png" alt="slide">
-                <div class="slide__product">
-                  Ice coffee
-                </div>
-                <p class="slide__discription">
-                  A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
-                </p>
-                <div class="slide__price">
-                  $4.50
+                <div class="slider__slide slide">
+                  <img class="slide__img" src="../assets/img/slider/coffee-slider-3.png" alt="slide">
+                  <div class="slide__product">
+                    Ice coffee
+                  </div>
+                  <p class="slide__discription">
+                    A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.
+                  </p>
+                  <div class="slide__price">
+                    $4.50
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="slider__arrow slider__arrow_right"></div>
           </div>
-          <div class="slider__nav">
-            <div class="slider__nav-line"></div>
+          <div class="slider__carousel-indicators">
+            <div class="slider__indicator slider__indicator_select"></div>
+            <div class="slider__indicator"></div>
+            <div class="slider__indicator"></div>
           </div>
         </div>
       </section>
@@ -138,40 +144,58 @@
             you
             are
           </p>
-          <button class="mobile-app__btn download_iphone"></button>
-          <button class="mobile-app__btn download_android"></button>
+          <button class="mobile-app__btn mobile-app__btn_iphone">
+            <div class="mobile-app__btn-line-first">
+              Available on the
+            </div>
+            <div class="mobile-app__btn-line-second">
+              App Store
+            </div>
+          </button>
+          <button class="mobile-app__btn mobile-app__btn_android">
+            <div class="mobile-app__btn-line-first">
+              Available on
+            </div>
+            <div class="mobile-app__btn-line-second">
+              Google Play
+            </div>
+          </button>
         </div>
         <img src="../assets/img/Home/mobile-app-mobile.png" alt="phone">
       </section>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer__column">
-      <h3 class="footer__title">
-        Sip, Savor, Smile. <span class="text-accent">It’s coffee time!</span>
-      </h3>
-      <ul class="footer__social">
-        <li class="footer__social-item">
-          <a class="footer__social-link" href=""></a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href=""></a>
-        </li>
-        <li class="footer__social-item">
-          <a class="footer__social-link" href=""></a>
-        </li>
-      </ul>
-    </div>
-    <div class="footer__column">
-      <h4 class="footer__subtitle">
-        Contact us
-      </h4>
-      <a class="footer__address footer__contacts" href="">8558 Green Rd., LA</a>
-      <a class="footer__tel footer__contacts" href="tel:+16035550123">+1 (603) 555-0123</a>
-      <span class="footer__working-hours">Mon-Sat: 9:00 AM – 23:00 PM</span>
-    </div>
-  </footer>
+  <div class="wrapper">
+    <footer class="footer">
+      <div class="footer__column">
+        <h3 class="footer__title secondary-title">
+          Sip, Savor, Smile. <span class="text-accent">It’s coffee time!</span>
+        </h3>
+        <ul class="footer__social">
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="https://twitter.com/?lang=ru"></a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="https://www.instagram.com/"></a>
+          </li>
+          <li class="footer__social-item">
+            <a class="footer__social-link" href="https://www.facebook.com/"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__subtitle">
+          Contact us
+        </h4>
+        <div class="footer__flex-container">
+          <a class="footer__contacts" href="">8558 Green Rd., LA</a>
+          <a class="footer__contacts" href="tel:+16035550123">+1 (603) 555-0123</a>
+          <div class="footer__contacts">Mon-Sat: 9:00 AM – 23:00 PM</div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 
 </html>

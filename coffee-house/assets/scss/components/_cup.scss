@@ -3,4 +3,15 @@
   width: 20px;
   height: 20px;
   background-image: url('../img/coffee-cup.svg');
+
+  &_enjoy {
+    position: absolute;
+    right: 50px;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+
+    .enjoy__btn:hover & {
+      opacity: 1;
+    }
+  }
 }
