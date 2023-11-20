@@ -2,6 +2,11 @@
   @include font-inter(
     $font-size: 6rem,
     $font-weight: 600,
-    $color: $color-text-dark
+    $color: $color-text-dark,
+    $line-height: 125%
   );
+
+  &_footer {
+    color: $color-text-light;
+  }
 }

@@ -1,13 +1,17 @@
 .footer {
   display: flex;
   align-items: center;
-  padding: 100px;
+  padding: 100px 100px 98px 100px;
   column-gap: 100px;
   background-color: $color-bg-container;
   border-radius: 40px;
 }
 .footer__column {
   width: 100%;
+
+  &:nth-child(2) {
+    transform: translateY(-2px);
+  }
 }
 .footer__title {
   margin-bottom: 40px;
@@ -66,13 +70,14 @@
 .footer__flex-container {
   display: flex;
   flex-direction: column;
-  row-gap: 16px;
+  row-gap: 20px;
 }
 .footer__contacts {
   @include font-inter(
     $font-size: 16px,
     $font-weight: 600,
-    $color: $color-text-light
+    $color: $color-text-light,
+    $line-height: 150%
   );
 
   position: relative;
@@ -84,7 +89,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 2px;
+    bottom: 4px;
     left: 0;
     display: block;
     width: 20px;

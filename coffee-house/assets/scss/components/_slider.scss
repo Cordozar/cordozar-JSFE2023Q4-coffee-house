@@ -61,10 +61,10 @@
 .slide__product {
   @include font-inter($font-size: 2.4rem, $font-weight: 600);
 
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .slide__discription {
-  @include font-inter($font-size: 1.6rem);
+  @include font-inter($font-size: 1.6rem, $line-height: 150%);
 
   margin-bottom: 16px;
   text-align: center;

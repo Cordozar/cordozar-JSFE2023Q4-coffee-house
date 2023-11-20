@@ -2,6 +2,7 @@
   @include font-inter(
     $font-size: 7.2rem,
     $font-weight: 600,
-    $color: $color-text-light
+    $color: $color-text-light,
+    $line-height: 105%
   );
 }

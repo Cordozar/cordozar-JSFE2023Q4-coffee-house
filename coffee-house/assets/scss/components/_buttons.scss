@@ -2,24 +2,25 @@
 
 .enjoy__btn {
   @include font-inter(
-    $font-size: 1.6rem,
-    $font-weight: 600,
-    $line-height: 2.4rem
+  $font-size: 1.6rem,
+  $font-weight: 600,
+  $line-height: 2.4rem
   );
 
   position: relative;
   display: flex;
   align-items: center;
-  padding: 20px 70px;
+  padding: 20px 79px;
+  background-color: $color-bg-body;
   border: none;
   border-radius: 100px;
   cursor: pointer;
 
   &-text {
-    transition: transform 0.5s linear;
+    transition: transform 0.3s linear;
 
     .enjoy__btn:hover & {
-      transform: translateX(-10px);
+      transform: translateX(-13px);
     }
   }
 }
