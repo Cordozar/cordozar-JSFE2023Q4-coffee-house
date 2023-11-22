@@ -7,10 +7,10 @@
 .logo {
 }
 .logo {
-  color: transparent;
   display: block;
   width: 100px;
   height: 60px;
+  color: transparent;
   background-image: url('../img/logo.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,16 +26,22 @@
   @include font-inter($font-size: 1.6rem, $font-weight: 600);
 }
 .header__menu {
-  @extend %underlineAnimationDark;
-
   display: flex;
   column-gap: 8px;
   cursor: pointer;
+
+  &_inactive {
+    @extend %underlineAnimationDark;
+  }
+
+  &_select {
+    @extend %underlineDark;
+  }
 }
 .header__menu-text {
-  padding: 0;
   @include font-inter($font-size: 1.6rem, $font-weight: 600);
 
+  padding: 0;
   background-color: transparent;
   border: none;
   cursor: inherit;

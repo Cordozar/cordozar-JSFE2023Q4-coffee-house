@@ -1,7 +1,7 @@
-.header__menu, .header__nav-item {
+.header__menu_inactive, .header__nav-item {
   position: relative;
 }
-.header__menu::before, .header__nav-item::before {
+.header__menu_inactive::before, .header__nav-item::before {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -12,7 +12,7 @@
   opacity: 0;
   transition: width 0.5s ease-in-out, left 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-.header__menu:hover::before, .header__nav-item:hover::before {
+.header__menu_inactive:hover::before, .header__nav-item:hover::before {
   left: 0;
   width: 100%;
   opacity: 1;
@@ -36,6 +36,32 @@
   left: 0;
   width: 100%;
   opacity: 1;
+}
+
+.header__menu_select {
+  position: relative;
+}
+.header__menu_select::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #403f3d;
+  opacity: 0;
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.header__menu_select:hover::before {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+.header__menu_select::before {
+  left: auto;
+  width: 100%;
+  opacity: 1;
+  transition: none;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -560,6 +586,206 @@ a {
   background-color: #665f55;
 }
 
+.menu {
+  padding-bottom: 100px;
+}
+
+.menu__title {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__flex-container {
+  display: flex;
+  align-self: center;
+  margin-bottom: 40px;
+  column-gap: 16px;
+}
+
+.tabs__tab {
+  transition-timing-function: linear;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 8px;
+  column-gap: 8px;
+  border: 1px solid #c1b6ad;
+  border-radius: 23px;
+  cursor: pointer;
+}
+.tabs__tab:hover {
+  background-color: #665f55;
+}
+
+.tabs__tab_select {
+  background-color: #665f55;
+}
+
+.tabs__tab-img {
+  transition-timing-function: linear;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  width: 30px;
+  height: 30px;
+  background-color: #c1b6ad;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+}
+.tabs__tab:hover .tabs__tab-img {
+  background-color: #e1d4c9;
+}
+.tabs__tab_select .tabs__tab-img {
+  background-color: #e1d4c9;
+}
+.tabs__tab:nth-child(1) .tabs__tab-img {
+  background-image: url("../img/Menu/tab-1.svg");
+}
+.tabs__tab:nth-child(2) .tabs__tab-img {
+  background-image: url("../img/Menu/tab-2.svg");
+}
+.tabs__tab:nth-child(3) .tabs__tab-img {
+  background-image: url("../img/Menu/tab-3.svg");
+}
+
+.tabs__tab-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #403f3d;
+  letter-spacing: normal;
+  transition-timing-function: linear;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+.tabs__tab:hover .tabs__tab-name {
+  color: #e1d4c9;
+}
+.tabs__tab_select .tabs__tab-name {
+  color: #e1d4c9;
+}
+
+.tabs__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.tabs__product {
+  width: 310px;
+  cursor: pointer;
+}
+
+.tabs__img-container {
+  height: 310px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.tabs__img {
+  transition-timing-function: linear;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: 100%;
+  transform: scale(1.1);
+}
+.tabs__product:nth-child(1) .tabs__img {
+  background-image: url("../img/Menu/coffee-1.jpg");
+}
+.tabs__product:nth-child(1):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(2) .tabs__img {
+  background-image: url("../img/Menu/coffee-2.jpg");
+}
+.tabs__product:nth-child(2):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(3) .tabs__img {
+  background-image: url("../img/Menu/coffee-3.jpg");
+}
+.tabs__product:nth-child(3):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(4) .tabs__img {
+  background-image: url("../img/Menu/coffee-4.jpg");
+}
+.tabs__product:nth-child(4):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(5) .tabs__img {
+  background-image: url("../img/Menu/coffee-5.jpg");
+}
+.tabs__product:nth-child(5):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(6) .tabs__img {
+  background-image: url("../img/Menu/coffee-6.jpg");
+}
+.tabs__product:nth-child(6):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(7) .tabs__img {
+  background-image: url("../img/Menu/coffee-7.jpg");
+}
+.tabs__product:nth-child(7):hover .tabs__img {
+  transform: scale(1);
+}
+.tabs__product:nth-child(8) .tabs__img {
+  background-image: url("../img/Menu/coffee-8.jpg");
+}
+.tabs__product:nth-child(8):hover .tabs__img {
+  transform: scale(1);
+}
+
+.tabs__text-block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.tabs__product-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 125%;
+  color: #403f3d;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.tabs__product-discription {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+  color: #403f3d;
+  letter-spacing: normal;
+  margin-bottom: 12px;
+}
+
+.tabs__product-price {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 125%;
+  color: #403f3d;
+  letter-spacing: normal;
+  margin-top: auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -568,10 +794,10 @@ a {
 }
 
 .logo {
-  color: transparent;
   display: block;
   width: 100px;
   height: 60px;
+  color: transparent;
   background-image: url("../img/logo.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -596,15 +822,14 @@ a {
   column-gap: 8px;
   cursor: pointer;
 }
-
 .header__menu-text {
-  padding: 0;
   font-style: normal;
   font-weight: 600;
   font-size: 1.6rem;
   line-height: normal;
   color: #403f3d;
   letter-spacing: normal;
+  padding: 0;
   background-color: transparent;
   border: none;
   cursor: inherit;
