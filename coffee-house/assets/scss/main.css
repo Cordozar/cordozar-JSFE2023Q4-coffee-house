@@ -688,7 +688,7 @@ a {
 .tabs__img-container {
   height: 310px;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 40px;
 }
 
 .tabs__img {
@@ -754,6 +754,8 @@ a {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  min-height: 196px;
+  justify-content: space-between;
 }
 
 .tabs__product-name {
@@ -783,7 +785,6 @@ a {
   line-height: 125%;
   color: #403f3d;
   letter-spacing: normal;
-  margin-top: auto;
 }
 
 .header {

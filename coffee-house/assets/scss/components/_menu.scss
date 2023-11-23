@@ -93,7 +93,7 @@
 .tabs__img-container {
   height: 310px;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 40px;
 }
 .tabs__img {
   $img-path: '../img/Menu/coffee-';
@@ -119,6 +119,8 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  min-height: 196px;
+  justify-content: space-between;
 }
 .tabs__product-name {
   @include font-inter(
@@ -141,5 +143,4 @@
     $line-height: 125%
   );
 
-  margin-top: auto;
 }
