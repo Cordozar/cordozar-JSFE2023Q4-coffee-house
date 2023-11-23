@@ -11,7 +11,11 @@
   margin-bottom: 40px;
 }
 .enjoy__dicription {
-  @include font-inter($font-size: 16px, $color: $color-border-light, $line-height: 150%);
+  @include font-inter(
+  $font-size: 16px,
+  $color: $color-border-light,
+  $line-height: 150%
+  );
 
   margin-bottom: 40px;
 }
@@ -92,7 +96,12 @@
   margin-bottom: 40px;
 }
 .mobile-app__discription {
-  @include font-inter($font-size: 16px, $color: $color-text-dark, $line-height: 150%);
+  @include font-inter(
+  $font-size: 16px,
+  $color: $color-text-dark,
+  $line-height: 150%
+  );
+
   margin-bottom: 40px;
 }
 .mobile-app__btn {
@@ -146,4 +155,6 @@
   .mobile-app__btn:hover & {
     color: $color-text-light;
   }
+}
+.mobile-app-img {
 }

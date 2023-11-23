@@ -34,6 +34,7 @@
 }
 .tabs__tab_select {
   background-color: $color-bg-container;
+  pointer-events: none;
 }
 .tabs__tab-img {
   @include transition(background-color);
@@ -88,6 +89,8 @@
 }
 .tabs__product {
   width: 310px;
+  border: 1px solid $color-border-light;
+  border-radius: 40px;
   cursor: pointer;
 }
 .tabs__img-container {
@@ -118,9 +121,9 @@
 .tabs__text-block {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  min-height: 196px;
   justify-content: space-between;
+  min-height: 196px;
+  padding: 20px;
 }
 .tabs__product-name {
   @include font-inter(
@@ -142,5 +145,4 @@
     $font-weight: 600,
     $line-height: 125%
   );
-
 }
