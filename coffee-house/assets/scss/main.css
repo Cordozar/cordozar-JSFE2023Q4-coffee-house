@@ -819,23 +819,19 @@ a {
 }
 
 .header__menu {
-  display: flex;
-  column-gap: 8px;
-  cursor: pointer;
-}
-.header__menu-text {
   font-style: normal;
   font-weight: 600;
   font-size: 1.6rem;
   line-height: normal;
   color: #403f3d;
   letter-spacing: normal;
+  display: flex;
   padding: 0;
+  column-gap: 8px;
   background-color: transparent;
   border: none;
-  cursor: inherit;
+  cursor: pointer;
 }
-
 .footer {
   display: flex;
   align-items: center;
