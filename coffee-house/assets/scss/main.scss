@@ -1,0 +1,20 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'base/normalize';
+@import 'base/base';
+
+@import 'components/wrapper';
+@import 'components/cup';
+@import 'components/text-accent';
+@import 'components/primary-title';
+@import 'components/secondary-title';
+@import 'components/buttons';
+@import 'components/slider';
+@import 'components/menu';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'pages/home'
