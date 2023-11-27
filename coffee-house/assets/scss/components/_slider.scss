@@ -25,20 +25,23 @@
   cursor: pointer;
 
   &_left {
-    background-image: url('../img/slider/arrow-left.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/slider/arrow-left-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/slider/arrow-left-hover.svg');
+      }
     }
+    background-image: url('../img/slider/arrow-left.svg');
   }
   &_right {
-    background-image: url('../img/slider/arrow-right.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/slider/arrow-right-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/slider/arrow-right-hover.svg');
+      }
     }
+
+    background-image: url('../img/slider/arrow-right.svg');
   }
 }
 .slider__wrapper {

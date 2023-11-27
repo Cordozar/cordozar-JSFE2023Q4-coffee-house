@@ -17,10 +17,12 @@
   cursor: pointer;
 
   &-text {
-    transition: transform 0.3s linear;
-
-    .enjoy__btn:hover & {
-      transform: translateX(-13px);
+    @include media-hover {
+      .enjoy__btn:hover & {
+        transform: translateX(-13px);
+      }
     }
+
+    transition: transform 0.3s linear;
   }
 }

@@ -73,11 +73,13 @@
   transform: scale(1.1);
 
   @for $i from 1 through 4 {
+    @include media-hover {
+      .about__img-container:nth-child(#{$i}):hover & {
+        transform: scale(1);
+      }
+    }
     .about__img-container:nth-child(#{$i}) & {
       background-image: url('#{$img-path}#{$i}.jpg');
-    }
-    .about__img-container:nth-child(#{$i}):hover & {
-      transform: scale(1);
     }
   }
 }
@@ -118,43 +120,49 @@
   cursor: pointer;
 
   &_iphone {
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/Home/mobile-app-apple-hover.svg');
+      }
+    }
+
     margin-right: 18px;
     background-image: url('../img/Home/mobile-app-apple.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/Home/mobile-app-apple-hover.svg');
-    }
   }
 
   &_android {
-    background-image: url('../img/Home/mobile-app-android.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/Home/mobile-app-android-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/Home/mobile-app-android-hover.svg');
+      }
     }
+
+    background-image: url('../img/Home/mobile-app-android.svg');
   }
 }
 .mobile-app__btn-line-first {
   @include transition(color);
+  @include media-hover {
+    .mobile-app__btn:hover & {
+      color: $color-text-light;
+    }
+  }
 
   display: block;
   margin-bottom: 4px;
-
-  .mobile-app__btn:hover & {
-    color: $color-text-light;
-  }
 }
 .mobile-app__btn-line-second {
   @include font-inter($font-size: 16px, $font-weight: 600);
   @include transition(color);
+  @include media-hover {
+    .mobile-app__btn:hover & {
+      color: $color-text-light;
+    }
+  }
 
   display: block;
-
-  .mobile-app__btn:hover & {
-    color: $color-text-light;
-  }
 }
 .mobile-app-img {
 }

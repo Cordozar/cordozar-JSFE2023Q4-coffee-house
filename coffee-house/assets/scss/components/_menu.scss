@@ -19,6 +19,11 @@
 }
 .tabs__tab {
   @include transition(background-color);
+  @include media-hover {
+    &:hover {
+      background-color: $color-bg-container;
+    }
+  }
 
   display: flex;
   align-items: center;
@@ -27,10 +32,6 @@
   border: 1px solid $color-border-light;
   border-radius: 23px;
   cursor: pointer;
-
-  &:hover {
-    background-color: $color-bg-container;
-  }
 }
 .tabs__tab_select {
   background-color: $color-bg-container;
@@ -38,6 +39,11 @@
 }
 .tabs__tab-img {
   @include transition(background-color);
+  @include media-hover {
+    .tabs__tab:hover & {
+      background-color: $color-bg-body;
+    }
+  }
 
   width: 30px;
   height: 30px;
@@ -45,10 +51,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
-
-  .tabs__tab:hover & {
-    background-color: $color-bg-body;
-  }
 
   .tabs__tab_select & {
     background-color: $color-bg-body;
@@ -72,9 +74,10 @@
     $color: $color-text-dark
   );
   @include transition(color);
-
-  .tabs__tab:hover & {
-    color: $color-bg-body;
+  @include media-hover {
+    .tabs__tab:hover & {
+      color: $color-bg-body;
+    }
   }
 
   .tabs__tab_select & {
@@ -110,11 +113,13 @@
   transform: scale(1.1);
 
   @for $i from 1 through 8 {
+    @include media-hover {
+      .tabs__product:nth-child(#{$i}):hover & {
+        transform: scale(1);
+      }
+    }
     .tabs__product:nth-child(#{$i}) & {
       background-image: url('#{$img-path}#{$i}.jpg');
-    }
-    .tabs__product:nth-child(#{$i}):hover & {
-      transform: scale(1);
     }
   }
 }
