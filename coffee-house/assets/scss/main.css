@@ -4,7 +4,7 @@
 .header__menu_inactive::before, .header__nav-item::before {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -5px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -24,7 +24,7 @@
 .footer__contacts:nth-child(1)::before, .footer__contacts:nth-child(2)::before {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -5px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -44,7 +44,7 @@
 .header__menu_select::before {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -5px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -378,10 +378,10 @@ template {
 }
 
 html {
+  padding-bottom: 40px;
   font-size: 10px;
   font-family: "Inter", sans-serif;
   background-color: #e1d4c9;
-  padding-bottom: 40px;
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
@@ -409,8 +409,8 @@ a {
 
 .wrapper {
   max-width: 1440px;
-  padding: 0 40px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .cup {
@@ -418,20 +418,21 @@ a {
   width: 20px;
   height: 20px;
   background-image: url("../img/coffee-cup.svg");
+  transform: translateY(-3px);
 }
 .cup_enjoy {
   position: absolute;
   right: 63px;
   opacity: 0;
-  transition: opacity 0.5s linear;
+  transition: opacity 0.2s linear;
 }
 .enjoy__btn:hover .cup_enjoy {
   opacity: 1;
 }
 
 .text-accent {
-  color: #b0907a;
   font-style: italic;
+  color: #b0907a;
 }
 
 .primary-title {
@@ -605,7 +606,7 @@ a {
 .tabs__flex-container {
   display: flex;
   align-self: center;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
   column-gap: 16px;
 }
 
@@ -678,7 +679,8 @@ a {
 .tabs__products {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  row-gap: 38px;
+  column-gap: 40px;
 }
 
 .tabs__product {
@@ -757,7 +759,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 196px;
+  min-height: 195px;
   padding: 20px;
 }
 

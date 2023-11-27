@@ -41,6 +41,7 @@
 
   &_select {
     @extend %underlineDark;
+
     pointer-events: none;
   }
 }
