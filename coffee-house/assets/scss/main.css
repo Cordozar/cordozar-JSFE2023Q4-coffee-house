@@ -418,6 +418,7 @@ a {
   width: 20px;
   height: 20px;
   background-image: url("../img/coffee-cup.svg");
+  transform: translateY(-3px);
 }
 .cup_enjoy {
   position: absolute;
