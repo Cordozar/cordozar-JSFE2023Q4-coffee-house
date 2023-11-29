@@ -5,6 +5,12 @@
   column-gap: 100px;
   background-color: $color-bg-container;
   border-radius: 40px;
+
+  @include media-tablet {
+    flex-direction: column;
+    row-gap: 100px;
+    padding: 100px 60px;
+  }
 }
 .footer__column {
   width: 100%;

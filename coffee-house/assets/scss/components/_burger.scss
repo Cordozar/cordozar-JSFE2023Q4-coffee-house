@@ -1,0 +1,14 @@
+.burger {
+  display: none;
+  height: 44px;
+  width: 44px;
+  background-image: url('../img/burger.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid $color-border-dark;
+  border-radius: 50%;
+
+  @include media-tablet {
+    display: block;
+  }
+}

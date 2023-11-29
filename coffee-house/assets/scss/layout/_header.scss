@@ -18,6 +18,10 @@
 .header__nav {
   display: flex;
   column-gap: 40px;
+
+  @include media-tablet {
+    display: none;
+  }
 }
 .header__nav-item {
   @extend %underlineAnimationDark;
@@ -34,6 +38,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @include media-tablet {
+    display: none;
+  }
 
   &_inactive {
     @extend %underlineAnimationDark;

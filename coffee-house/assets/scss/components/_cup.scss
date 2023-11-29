@@ -16,5 +16,9 @@
     right: 63px;
     opacity: 0;
     transition: opacity 0.2s linear;
+
+    @include media-tablet {
+      opacity: 1;
+    }
   }
 }
