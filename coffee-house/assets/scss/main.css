@@ -418,6 +418,11 @@ a {
   margin: 0 auto;
   padding: 0 40px;
 }
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 0 16px;
+  }
+}
 
 .cup {
   display: block;
@@ -456,6 +461,11 @@ a {
   color: #e1d4c9;
   letter-spacing: normal;
 }
+@media (max-width: 767px) {
+  .primary-title {
+    font-size: 4.2rem;
+  }
+}
 
 .secondary-title {
   font-style: normal;
@@ -467,6 +477,11 @@ a {
 }
 .secondary-title_footer {
   color: #e1d4c9;
+}
+@media (max-width: 767px) {
+  .secondary-title {
+    font-size: 3.2rem;
+  }
 }
 
 .enjoy__btn {
@@ -546,6 +561,11 @@ a {
     background-image: url("../img/slider/arrow-right-hover.svg");
   }
 }
+@media (max-width: 1279px) {
+  .slider__arrow {
+    display: none;
+  }
+}
 
 .slider__wrapper {
   width: 480px;
@@ -560,6 +580,11 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 767px) {
+  .slide {
+    max-width: 348px;
+  }
 }
 
 .slide__img {
@@ -620,6 +645,11 @@ a {
   margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
+}
+@media (max-width: 1279px) {
+  .menu__title {
+    width: auto;
+  }
 }
 
 .tabs {
@@ -978,6 +1008,12 @@ a {
     padding: 100px 60px;
   }
 }
+@media (max-width: 767px) {
+  .footer {
+    row-gap: 40px;
+    padding: 60px 16px;
+  }
+}
 
 .footer__column {
   width: 100%;
@@ -1100,6 +1136,11 @@ a {
     padding: 100px 60px;
   }
 }
+@media (max-width: 767px) {
+  .enjoy {
+    padding: 60px 16px;
+  }
+}
 
 .enjoy__title {
   margin-bottom: 40px;
@@ -1141,10 +1182,10 @@ a {
   .about__grid-container {
     grid-template-rows: 590px 590px;
     grid-auto-flow: column;
-    width: 688px;
+    max-width: 688px;
+    margin: 0 auto;
     row-gap: 40px;
     column-gap: normal;
-    margin: 0 auto;
   }
 }
 
@@ -1237,6 +1278,11 @@ a {
     transform: scale(1.05);
   }
 }
+@media (max-width: 767px) {
+  .about__img {
+    background-size: cover;
+  }
+}
 
 .mobile-app {
   display: flex;
@@ -1248,6 +1294,11 @@ a {
   .mobile-app {
     flex-direction: column;
     row-gap: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-app {
+    row-gap: 40px;
   }
 }
 
@@ -1289,6 +1340,12 @@ a {
     background-image: url("../img/Home/mobile-app-apple-hover.svg");
   }
 }
+@media (max-width: 767px) {
+  .mobile-app__btn_iphone {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
 .mobile-app__btn_android {
   background-image: url("../img/Home/mobile-app-android.svg");
 }
@@ -1327,6 +1384,12 @@ a {
 @media (hover: hover) {
   .mobile-app__btn:hover .mobile-app__btn-line-second {
     color: #e1d4c9;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-app-img {
+    max-width: 348px;
   }
 }
 
