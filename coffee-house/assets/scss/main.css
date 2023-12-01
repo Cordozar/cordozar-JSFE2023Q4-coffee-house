@@ -442,7 +442,7 @@ a {
     opacity: 1;
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .cup_enjoy {
     opacity: 1;
   }
@@ -464,6 +464,7 @@ a {
 @media (max-width: 767px) {
   .primary-title {
     font-size: 4.2rem;
+    line-height: 115%;
   }
 }
 
@@ -508,7 +509,7 @@ a {
     transform: translateX(-13px);
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .enjoy__btn-text {
     transform: translateX(-13px);
   }
@@ -526,6 +527,11 @@ a {
   align-items: center;
   width: 100%;
   margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .slider__content {
+    justify-content: center;
+  }
 }
 
 .slider__arrow {
@@ -561,7 +567,7 @@ a {
     background-image: url("../img/slider/arrow-right-hover.svg");
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .slider__arrow {
     display: none;
   }
@@ -570,6 +576,11 @@ a {
 .slider__wrapper {
   width: 480px;
   overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  .slider__wrapper {
+    max-width: 348px;
+  }
 }
 
 .slider__inner {
@@ -589,6 +600,11 @@ a {
 
 .slide__img {
   margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .slide__img {
+    height: 348px;
+  }
 }
 
 .slide__product {
@@ -639,6 +655,11 @@ a {
 .menu {
   padding-bottom: 100px;
 }
+@media (max-width: 767px) {
+  .menu {
+    padding-bottom: 102px;
+  }
+}
 
 .menu__title {
   width: 60%;
@@ -662,6 +683,11 @@ a {
   align-self: center;
   margin-bottom: 38px;
   column-gap: 16px;
+}
+@media (max-width: 767px) {
+  .tabs__flex-container {
+    column-gap: 8px;
+  }
 }
 
 .tabs__tab {
@@ -747,10 +773,15 @@ a {
     justify-content: center;
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .tabs__products {
     column-gap: 40px;
     margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .tabs__products {
+    column-gap: 38px;
   }
 }
 
@@ -760,7 +791,7 @@ a {
   border-radius: 40px;
   cursor: pointer;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .tabs__product:nth-child(5) {
     display: none;
   }
@@ -904,7 +935,7 @@ a {
   border: 1px solid #665f55;
   border-radius: 50%;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .tabs__refresh {
     display: block;
   }
@@ -920,7 +951,7 @@ a {
   border: 1px solid #665f55;
   border-radius: 50%;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .burger {
     display: block;
   }
@@ -955,7 +986,7 @@ a {
   display: flex;
   column-gap: 40px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .header__nav {
     display: none;
   }
@@ -984,7 +1015,7 @@ a {
   border: none;
   cursor: pointer;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .header__menu {
     display: none;
   }
@@ -1178,7 +1209,7 @@ a {
   grid-template-rows: 430px 40px 120px 40px 430px;
   column-gap: 40px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .about__grid-container {
     grid-template-rows: 590px 590px;
     grid-auto-flow: column;
@@ -1199,7 +1230,7 @@ a {
 .about__img-container:nth-child(2) {
   grid-row: 5/6;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .about__img-container:nth-child(2) {
     display: none;
   }
@@ -1207,7 +1238,7 @@ a {
 .about__img-container:nth-child(3) {
   grid-row: 1/2;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .about__img-container:nth-child(3) {
     display: none;
   }
@@ -1215,7 +1246,7 @@ a {
 .about__img-container:nth-child(4) {
   grid-row: 3/6;
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .about__img-container:nth-child(1) {
     grid-row: auto;
   }
@@ -1273,7 +1304,7 @@ a {
 .about__img-container:nth-child(4) .about__img {
   background-image: url("../img/Home/about-4.jpg");
 }
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .about__img {
     transform: scale(1.05);
   }
@@ -1281,6 +1312,7 @@ a {
 @media (max-width: 767px) {
   .about__img {
     background-size: cover;
+    transform: scale(1.23);
   }
 }
 
@@ -1342,8 +1374,7 @@ a {
 }
 @media (max-width: 767px) {
   .mobile-app__btn_iphone {
-    margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 }
 .mobile-app__btn_android {

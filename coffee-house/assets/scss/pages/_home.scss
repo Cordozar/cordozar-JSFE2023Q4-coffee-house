@@ -11,7 +11,7 @@
     padding-right: 580px;
   }
 
-  @include media-tablet {
+  @include media-large-tablet {
     padding: 100px 60px;
   }
 
@@ -127,6 +127,7 @@
 
   @include media-mobile {
     background-size: cover;
+    transform: scale(1.23);
   }
 }
 
@@ -138,7 +139,7 @@
   padding: 100px 0;
   column-gap: 100px;
 
-  @include media-tablet {
+  @include media-large-tablet {
     flex-direction: column;
     row-gap: 100px;
   }
@@ -186,8 +187,7 @@
     background-image: url('../img/Home/mobile-app-apple.svg');
 
     @include media-mobile {
-      margin-right: 0;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
   }
 

@@ -6,7 +6,7 @@
   background-color: $color-bg-container;
   border-radius: 40px;
 
-  @include media-tablet {
+  @include media-large-tablet {
     flex-direction: column;
     row-gap: 100px;
     padding: 100px 60px;
