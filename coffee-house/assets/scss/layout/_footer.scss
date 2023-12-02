@@ -5,6 +5,17 @@
   column-gap: 100px;
   background-color: $color-bg-container;
   border-radius: 40px;
+
+  @include media-large-tablet {
+    flex-direction: column;
+    row-gap: 100px;
+    padding: 100px 60px;
+  }
+
+  @include media-mobile {
+    row-gap: 40px;
+    padding: 60px 16px;
+  }
 }
 .footer__column {
   width: 100%;
@@ -34,28 +45,34 @@
   border-radius: 50%;
 
   .footer__social-item:nth-child(1) & {
-    background-image: url('../img/footer/footer-twitter.svg');
-
-    &:hover {
-      background-color: $color-bg-body;
-      background-image: url('../img/footer/footer-twitter-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-body;
+        background-image: url('../img/footer/footer-twitter-hover.svg');
+      }
     }
+
+    background-image: url('../img/footer/footer-twitter.svg');
   }
   .footer__social-item:nth-child(2) & {
-    background-image: url('../img/footer/footer-instagram.svg');
-
-    &:hover {
-      background-color: $color-bg-body;
-      background-image: url('../img/footer/footer-instagram-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-body;
+        background-image: url('../img/footer/footer-instagram-hover.svg');
+      }
     }
+
+    background-image: url('../img/footer/footer-instagram.svg');
   }
   .footer__social-item:nth-child(3) & {
-    background-image: url('../img/footer/footer-facebook.svg');
-
-    &:hover {
-      background-color: $color-bg-body;
-      background-image: url('../img/footer/footer-facebook-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-body;
+        background-image: url('../img/footer/footer-facebook-hover.svg');
+      }
     }
+
+    background-image: url('../img/footer/footer-facebook.svg');
   }
 }
 .footer__subtitle {

@@ -1,11 +1,19 @@
 .menu {
   padding-bottom: 100px;
+
+  @include media-mobile {
+    padding-bottom: 102px;
+  }
 }
 .menu__title {
   width: 60%;
   margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
+
+  @include media-large-tablet {
+    width: auto;
+  }
 }
 .tabs {
   display: flex;
@@ -16,9 +24,18 @@
   align-self: center;
   margin-bottom: 38px;
   column-gap: 16px;
+
+  @include media-mobile {
+    column-gap: 8px;
+  }
 }
 .tabs__tab {
   @include transition(background-color);
+  @include media-hover {
+    &:hover {
+      background-color: $color-bg-container;
+    }
+  }
 
   display: flex;
   align-items: center;
@@ -27,10 +44,6 @@
   border: 1px solid $color-border-light;
   border-radius: 23px;
   cursor: pointer;
-
-  &:hover {
-    background-color: $color-bg-container;
-  }
 }
 .tabs__tab_select {
   background-color: $color-bg-container;
@@ -38,6 +51,11 @@
 }
 .tabs__tab-img {
   @include transition(background-color);
+  @include media-hover {
+    .tabs__tab:hover & {
+      background-color: $color-bg-body;
+    }
+  }
 
   width: 30px;
   height: 30px;
@@ -45,10 +63,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
-
-  .tabs__tab:hover & {
-    background-color: $color-bg-body;
-  }
 
   .tabs__tab_select & {
     background-color: $color-bg-body;
@@ -72,9 +86,10 @@
     $color: $color-text-dark
   );
   @include transition(color);
-
-  .tabs__tab:hover & {
-    color: $color-bg-body;
+  @include media-hover {
+    .tabs__tab:hover & {
+      color: $color-bg-body;
+    }
   }
 
   .tabs__tab_select & {
@@ -86,12 +101,34 @@
   flex-wrap: wrap;
   row-gap: 38px;
   column-gap: 40px;
+
+  @media (max-width: $content-width) {
+    justify-content: center;
+    // justify-content: space-between;
+  }
+
+  @include media-tablet {
+    column-gap: 40px;
+    margin: 0 auto;
+  }
+
+  @include media-mobile {
+    column-gap: 38px;
+  }
 }
 .tabs__product {
   width: 310px;
   border: 1px solid $color-border-light;
   border-radius: 40px;
   cursor: pointer;
+
+  @include media-tablet {
+    @for $i from 5 through 8 {
+      &:nth-child(#{$i}) {
+        display: none;
+      }
+    }
+  }
 }
 .tabs__img-container {
   height: 310px;
@@ -110,11 +147,13 @@
   transform: scale(1.1);
 
   @for $i from 1 through 8 {
+    @include media-hover {
+      .tabs__product:nth-child(#{$i}):hover & {
+        transform: scale(1);
+      }
+    }
     .tabs__product:nth-child(#{$i}) & {
       background-image: url('#{$img-path}#{$i}.jpg');
-    }
-    .tabs__product:nth-child(#{$i}):hover & {
-      transform: scale(1);
     }
   }
 }
@@ -145,4 +184,19 @@
     $font-weight: 600,
     $line-height: 125%
   );
+}
+.tabs__refresh {
+  display: none;
+  width: 60px;
+  height: 60px;
+  margin: 40px auto 0 auto;
+  background-image: url('../img/refresh.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid $color-border-dark;
+  border-radius: 50%;
+
+  @include media-tablet {
+    display: block;
+  }
 }
