@@ -17,9 +17,15 @@
   cursor: pointer;
 
   &-text {
+    @include media-hover {
+      .enjoy__btn:hover & {
+        transform: translateX(-13px);
+      }
+    }
+
     transition: transform 0.3s linear;
 
-    .enjoy__btn:hover & {
+    @include media-tablet {
       transform: translateX(-13px);
     }
   }

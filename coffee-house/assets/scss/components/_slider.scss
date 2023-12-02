@@ -9,6 +9,10 @@
   align-items: center;
   width: 100%;
   margin-bottom: 40px;
+
+  @include media-mobile {
+    justify-content: center
+  }
 }
 .slider__arrow {
   @include transition(background-color, background-image);
@@ -25,25 +29,36 @@
   cursor: pointer;
 
   &_left {
-    background-image: url('../img/slider/arrow-left.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/slider/arrow-left-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/slider/arrow-left-hover.svg');
+      }
     }
+    background-image: url('../img/slider/arrow-left.svg');
   }
   &_right {
-    background-image: url('../img/slider/arrow-right.svg');
-
-    &:hover {
-      background-color: $color-bg-container;
-      background-image: url('../img/slider/arrow-right-hover.svg');
+    @include media-hover {
+      &:hover {
+        background-color: $color-bg-container;
+        background-image: url('../img/slider/arrow-right-hover.svg');
+      }
     }
+
+    background-image: url('../img/slider/arrow-right.svg');
+  }
+
+  @include media-mobile {
+    display: none;
   }
 }
 .slider__wrapper {
   width: 480px;
   overflow-x: hidden;
+
+  @include media-mobile {
+    max-width: 348px;
+  }
 }
 .slider__inner {
   display: flex;
@@ -54,9 +69,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include media-mobile {
+    max-width: 348px;
+  }
 }
 .slide__img {
   margin-bottom: 20px;
+
+  @include media-mobile {
+    height: 348px;
+  }
 }
 .slide__product {
   @include font-inter($font-size: 2.4rem, $font-weight: 600);
