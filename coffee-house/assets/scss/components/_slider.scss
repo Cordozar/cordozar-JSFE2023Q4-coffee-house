@@ -11,7 +11,7 @@
   margin-bottom: 40px;
 
   @include media-mobile {
-    justify-content: center
+    justify-content: center;
   }
 }
 .slider__arrow {
@@ -62,13 +62,16 @@
 }
 .slider__inner {
   display: flex;
+  transition: all 0.5s linear;
 }
+
 .slider__slide {
 }
 .slide {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.3s linear;
 
   @include media-mobile {
     max-width: 348px;
