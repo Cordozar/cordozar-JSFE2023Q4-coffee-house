@@ -88,6 +88,33 @@ window.addEventListener('DOMContentLoaded', () => {
   let slideIndex = 1;
   let offset = 0;
 
+  const indicators = document.querySelector('.slider__carousel-indicators');
+  const dots = [];
+
+  for (let i = 0; i < slides.length; i += 1) {
+    const dot = document.createElement('div');
+    dot.setAttribute('data-slide-to', i + 1);
+    dot.classList.add('slider__indicator');
+    if (i === 0) {
+      dot.classList.add('slider__indicator_select');
+    }
+    indicators.append(dot);
+    dots.push(dot);
+  }
+
+  function moveSlidesField() {
+    slidesField.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function setActiveIndicator() {
+    dots.forEach((dot) => dot.classList.remove('slider__indicator_select'));
+    dots[slideIndex - 1].classList.add('slider__indicator_select');
+  }
+
+  function setMaxOffset(number) {
+    offset = Number.parseInt(widthSlidesWrapper, 10) * number;
+  }
+
   nextSlide.addEventListener('click', () => {
     if (
       offset ===
@@ -97,15 +124,45 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
       offset += Number.parseInt(widthSlidesWrapper, 10);
     }
-    slidesField.style.transform = `translateX(-${offset}px)`;
+
+    moveSlidesField();
+
+    if (slideIndex === slides.length) {
+      slideIndex = 1;
+    } else {
+      slideIndex += 1;
+    }
+
+    setActiveIndicator();
   });
 
   prevSlide.addEventListener('click', () => {
     if (offset === 0) {
-      offset = Number.parseInt(widthSlidesWrapper, 10) * (slides.length - 1);
+      setMaxOffset(slides.length - 1);
     } else {
       offset -= Number.parseInt(widthSlidesWrapper, 10);
     }
-    slidesField.style.transform = `translateX(+${offset}px)`;
+
+    moveSlidesField();
+
+    if (slideIndex === 1) {
+      slideIndex = slides.length;
+    } else {
+      slideIndex -= 1;
+    }
+
+    setActiveIndicator();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const slideTo = e.target.getAttribute('data-slide-to');
+
+      slideIndex = +slideTo;
+
+      setMaxOffset(slideTo - 1);
+      moveSlidesField();
+      setActiveIndicator();
+    });
   });
 });
