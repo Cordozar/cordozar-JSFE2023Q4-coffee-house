@@ -104,7 +104,6 @@
 
   @media (max-width: $content-width) {
     justify-content: center;
-    // justify-content: space-between;
   }
 
   @include media-tablet {
@@ -122,6 +121,10 @@
   border-radius: 40px;
   cursor: pointer;
 
+  &_hidden {
+    display: none;
+  }
+
   @include media-tablet {
     @for $i from 5 through 8 {
       &:nth-child(#{$i}) {
@@ -136,7 +139,9 @@
   border-radius: 40px;
 }
 .tabs__img {
-  $img-path: '../img/Menu/coffee-';
+  $img-path-coffee: '../img/Menu/coffee-';
+  $img-path-tea: '../img/Menu/tea-';
+  $img-path-dessert: '../img/Menu/dessert-';
 
   @include transition(transform);
 
@@ -146,14 +151,27 @@
   background-size: 100%;
   transform: scale(1.1);
 
-  @for $i from 1 through 8 {
-    @include media-hover {
-      .tabs__product:nth-child(#{$i}):hover & {
-        transform: scale(1);
-      }
+  @include media-hover {
+    .tabs__product:hover & {
+      transform: scale(1);
     }
+  }
+
+  @for $i from 1 through 8 {
     .tabs__product:nth-child(#{$i}) & {
-      background-image: url('#{$img-path}#{$i}.jpg');
+      background-image: url('#{$img-path-coffee}#{$i}.jpg');
+    }
+  }
+
+  @for $i from 9 through 12 {
+    .tabs__product:nth-child(#{$i}) & {
+      background-image: url('#{$img-path-tea}#{$i}.jpg');
+    }
+  }
+
+  @for $i from 13 through 20 {
+    .tabs__product:nth-child(#{$i}) & {
+      background-image: url('#{$img-path-dessert}#{$i}.jpg');
     }
   }
 }

@@ -805,6 +805,9 @@ a {
   border-radius: 40px;
   cursor: pointer;
 }
+.tabs__product_hidden {
+  display: none;
+}
 @media (max-width: 768px) {
   .tabs__product:nth-child(5) {
     display: none;
@@ -837,68 +840,69 @@ a {
   transform: scale(1.1);
 }
 @media (hover: hover) {
-  .tabs__product:nth-child(1):hover .tabs__img {
+  .tabs__product:hover .tabs__img {
     transform: scale(1);
   }
 }
 .tabs__product:nth-child(1) .tabs__img {
   background-image: url("../img/Menu/coffee-1.jpg");
 }
-@media (hover: hover) {
-  .tabs__product:nth-child(2):hover .tabs__img {
-    transform: scale(1);
-  }
-}
 .tabs__product:nth-child(2) .tabs__img {
   background-image: url("../img/Menu/coffee-2.jpg");
-}
-@media (hover: hover) {
-  .tabs__product:nth-child(3):hover .tabs__img {
-    transform: scale(1);
-  }
 }
 .tabs__product:nth-child(3) .tabs__img {
   background-image: url("../img/Menu/coffee-3.jpg");
 }
-@media (hover: hover) {
-  .tabs__product:nth-child(4):hover .tabs__img {
-    transform: scale(1);
-  }
-}
 .tabs__product:nth-child(4) .tabs__img {
   background-image: url("../img/Menu/coffee-4.jpg");
-}
-@media (hover: hover) {
-  .tabs__product:nth-child(5):hover .tabs__img {
-    transform: scale(1);
-  }
 }
 .tabs__product:nth-child(5) .tabs__img {
   background-image: url("../img/Menu/coffee-5.jpg");
 }
-@media (hover: hover) {
-  .tabs__product:nth-child(6):hover .tabs__img {
-    transform: scale(1);
-  }
-}
 .tabs__product:nth-child(6) .tabs__img {
   background-image: url("../img/Menu/coffee-6.jpg");
-}
-@media (hover: hover) {
-  .tabs__product:nth-child(7):hover .tabs__img {
-    transform: scale(1);
-  }
 }
 .tabs__product:nth-child(7) .tabs__img {
   background-image: url("../img/Menu/coffee-7.jpg");
 }
-@media (hover: hover) {
-  .tabs__product:nth-child(8):hover .tabs__img {
-    transform: scale(1);
-  }
-}
 .tabs__product:nth-child(8) .tabs__img {
   background-image: url("../img/Menu/coffee-8.jpg");
+}
+.tabs__product:nth-child(9) .tabs__img {
+  background-image: url("../img/Menu/tea-9.jpg");
+}
+.tabs__product:nth-child(10) .tabs__img {
+  background-image: url("../img/Menu/tea-10.jpg");
+}
+.tabs__product:nth-child(11) .tabs__img {
+  background-image: url("../img/Menu/tea-11.jpg");
+}
+.tabs__product:nth-child(12) .tabs__img {
+  background-image: url("../img/Menu/tea-12.jpg");
+}
+.tabs__product:nth-child(13) .tabs__img {
+  background-image: url("../img/Menu/dessert-13.jpg");
+}
+.tabs__product:nth-child(14) .tabs__img {
+  background-image: url("../img/Menu/dessert-14.jpg");
+}
+.tabs__product:nth-child(15) .tabs__img {
+  background-image: url("../img/Menu/dessert-15.jpg");
+}
+.tabs__product:nth-child(16) .tabs__img {
+  background-image: url("../img/Menu/dessert-16.jpg");
+}
+.tabs__product:nth-child(17) .tabs__img {
+  background-image: url("../img/Menu/dessert-17.jpg");
+}
+.tabs__product:nth-child(18) .tabs__img {
+  background-image: url("../img/Menu/dessert-18.jpg");
+}
+.tabs__product:nth-child(19) .tabs__img {
+  background-image: url("../img/Menu/dessert-19.jpg");
+}
+.tabs__product:nth-child(20) .tabs__img {
+  background-image: url("../img/Menu/dessert-20.jpg");
 }
 
 .tabs__text-block {
