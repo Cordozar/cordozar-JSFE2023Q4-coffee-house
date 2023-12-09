@@ -1,8 +1,8 @@
 // Tabs
 
 window.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tabs__tab');
-  const tabNames = document.querySelectorAll('.tabs__tab-name');
+  const tabs = document.querySelectorAll('.tabs .tabs__tab');
+  const tabNames = document.querySelectorAll('.tabs .tabs__tab-name');
 
   function removeSelectedTabs() {
     tabs.forEach((tab) => {
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function filterBySelectedTab(selectTab) {
-    const products = document.querySelectorAll('.tabs__product');
+    const products = document.querySelectorAll('.tabs .tabs__product');
     products.forEach((product) => {
       if (product.closest(`[data-category="${selectTab}"]`)) {
         product.classList.remove('tabs__product_hidden');
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   filterBySelectedTab(tabNames[0].innerHTML);
 
-  document.querySelector('.tabs__flex-container').addEventListener('click', (e) => {
+  document.querySelector('.tabs .tabs__flex-container').addEventListener('click', (e) => {
     const target = e.target;
     const selectTab = target
       .closest('.tabs__tab')

@@ -28,6 +28,16 @@
   @include media-mobile {
     column-gap: 8px;
   }
+
+  &_modal {
+    column-gap: 7px;
+    margin-bottom: 18px;
+
+    @include media-large-tablet {
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+  }
 }
 .tabs__tab {
   @include transition(background-color);
@@ -96,6 +106,29 @@
     color: $color-bg-body;
   }
 }
+.tabs__tab-icon {
+  @include font-inter($font-size: 1.6rem, $font-weight: 600);
+  @include transition(background-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: $color-border-light;
+  border-radius: 50%;
+
+  @include media-hover {
+    .tabs__tab:hover & {
+      background-color: $color-bg-body;
+    }
+  }
+
+  .tabs__tab_select & {
+    background-color: $color-bg-body;
+  }
+}
+
 .tabs__products {
   display: flex;
   flex-wrap: wrap;
