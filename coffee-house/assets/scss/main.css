@@ -737,6 +737,10 @@ a {
   pointer-events: none;
 }
 
+.tabs__tab_select-modal {
+  background-color: #665f55;
+}
+
 .tabs__tab-img {
   transition-timing-function: linear;
   transition-duration: 0.3s;
@@ -785,6 +789,9 @@ a {
 .tabs__tab_select .tabs__tab-name {
   color: #e1d4c9;
 }
+.tabs__tab_select-modal .tabs__tab-name {
+  color: #e1d4c9;
+}
 
 .tabs__tab-icon {
   font-style: normal;
@@ -809,7 +816,7 @@ a {
     background-color: #e1d4c9;
   }
 }
-.tabs__tab_select .tabs__tab-icon {
+.tabs__tab_select-modal .tabs__tab-icon {
   background-color: #e1d4c9;
 }
 

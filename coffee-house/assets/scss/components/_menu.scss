@@ -59,6 +59,10 @@
   background-color: $color-bg-container;
   pointer-events: none;
 }
+.tabs__tab_select-modal {
+  background-color: $color-bg-container;
+  // pointer-events: none;
+}
 .tabs__tab-img {
   @include transition(background-color);
   @include media-hover {
@@ -105,6 +109,9 @@
   .tabs__tab_select & {
     color: $color-bg-body;
   }
+  .tabs__tab_select-modal & {
+    color: $color-bg-body;
+  }
 }
 .tabs__tab-icon {
   @include font-inter($font-size: 1.6rem, $font-weight: 600);
@@ -124,7 +131,7 @@
     }
   }
 
-  .tabs__tab_select & {
+  .tabs__tab_select-modal & {
     background-color: $color-bg-body;
   }
 }

@@ -45,7 +45,8 @@ window.addEventListener('DOMContentLoaded', () => {
   optionsFirst[0].classList.add('tabs__tab_select');
 
   const price = modal.querySelector('.modal__price');
-  let startPrice = +Number.parseInt(price.innerHTML.slice(1), 10);
+  let startPrice = +Number.parseFloat(price.innerHTML.slice(1), 10);
+  const STEP_SIZE = 0.5;
 
   function checkSelectedBtn() {
     optionsFirst = optionsContainersFirst.querySelectorAll('.tabs__tab');
@@ -58,6 +59,10 @@ window.addEventListener('DOMContentLoaded', () => {
     return result;
   }
 
+  function updatePrice() {
+    price.innerHTML = `$${startPrice.toFixed(2)}`;
+  }
+
   optionsContainersFirst.addEventListener('click', (e) => {
     const target = e.target;
     const prevClick = checkSelectedBtn(optionsFirst);
@@ -67,39 +72,41 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target.closest('.tabs__tab') === btn) {
           btn.classList.add('tabs__tab_select');
           if (prevClick < i) {
-            // console.log(`Текущая кнопка ${i}`);
-            // console.log(`Предыдущая кнопка ${prevClick}`);
             for (let j = 0; j < i - prevClick; j += 1) {
-              startPrice += 0.5;
+              startPrice += STEP_SIZE;
             }
             price.innerHTML = `$${startPrice.toFixed(2)}`;
           } else if (prevClick > i) {
             for (let j = 0; j < prevClick - i; j += 1) {
-              startPrice -= 0.5;
+              startPrice -= STEP_SIZE;
             }
-            price.innerHTML = `$${startPrice.toFixed(2)}`;
           }
         } else {
           btn.classList.remove('tabs__tab_select');
         }
       });
     }
+
+    updatePrice();
   });
 
-  // optionsContainersSecond.addEventListener('click', (e) => {
-  //   const target = e.target;
+  optionsContainersSecond.addEventListener('click', (e) => {
+    const target = e.target;
 
-  //   if (target.closest('.tabs__tab')) {
-  //     optionsSecond.forEach((btn) => {
-  //       if (target.closest('.tabs__tab') === btn) {
-  //         btn.classList.toggle('tabs__tab_select');
-  //         if (btn.classList.contains('tabs__tab_select')) {
-  //           lowerPrice(1);
-  //         } else {
-  //           raisePrice(1);
-  //         }
-  //       }
-  //     });
-  //   }
-  // });
+    if (target.closest('.tabs__tab')) {
+      optionsSecond.forEach((btn) => {
+        if (target.closest('.tabs__tab') === btn) {
+          if (!target.closest('.tabs__tab_select-modal')) {
+            btn.classList.add('tabs__tab_select-modal');
+            startPrice += STEP_SIZE;
+          } else {
+            btn.classList.remove('tabs__tab_select-modal');
+            startPrice -= STEP_SIZE;
+          }
+        }
+      });
+    }
+
+    updatePrice();
+  });
 });
