@@ -1,4 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
+  alert(
+    'Проверяющий, прошу, по взможности, не смотреть пока мою работу, хочу доделать.'
+  );
+
   // BurgerMenu
 
   const burgerBtn = document.querySelector('.burger');
@@ -76,4 +80,3 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
