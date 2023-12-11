@@ -28,6 +28,16 @@
   @include media-mobile {
     column-gap: 8px;
   }
+
+  &_modal {
+    column-gap: 7px;
+    margin-bottom: 18px;
+
+    @include media-large-tablet {
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+  }
 }
 .tabs__tab {
   @include transition(background-color);
@@ -48,6 +58,10 @@
 .tabs__tab_select {
   background-color: $color-bg-container;
   pointer-events: none;
+}
+.tabs__tab_select-modal {
+  background-color: $color-bg-container;
+  // pointer-events: none;
 }
 .tabs__tab-img {
   @include transition(background-color);
@@ -95,7 +109,33 @@
   .tabs__tab_select & {
     color: $color-bg-body;
   }
+  .tabs__tab_select-modal & {
+    color: $color-bg-body;
+  }
 }
+.tabs__tab-icon {
+  @include font-inter($font-size: 1.6rem, $font-weight: 600);
+  @include transition(background-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: $color-border-light;
+  border-radius: 50%;
+
+  @include media-hover {
+    .tabs__tab:hover & {
+      background-color: $color-bg-body;
+    }
+  }
+
+  .tabs__tab_select-modal & {
+    background-color: $color-bg-body;
+  }
+}
+
 .tabs__products {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +144,6 @@
 
   @media (max-width: $content-width) {
     justify-content: center;
-    // justify-content: space-between;
   }
 
   @include media-tablet {
@@ -122,12 +161,8 @@
   border-radius: 40px;
   cursor: pointer;
 
-  @include media-tablet {
-    @for $i from 5 through 8 {
-      &:nth-child(#{$i}) {
-        display: none;
-      }
-    }
+  &_hidden {
+    display: none;
   }
 }
 .tabs__img-container {
@@ -136,7 +171,9 @@
   border-radius: 40px;
 }
 .tabs__img {
-  $img-path: '../img/Menu/coffee-';
+  $img-path-coffee: '../img/Menu/coffee-';
+  $img-path-tea: '../img/Menu/tea-';
+  $img-path-dessert: '../img/Menu/dessert-';
 
   @include transition(transform);
 
@@ -146,14 +183,27 @@
   background-size: 100%;
   transform: scale(1.1);
 
-  @for $i from 1 through 8 {
-    @include media-hover {
-      .tabs__product:nth-child(#{$i}):hover & {
-        transform: scale(1);
-      }
+  @include media-hover {
+    .tabs__product:hover & {
+      transform: scale(1);
     }
+  }
+
+  @for $i from 1 through 8 {
     .tabs__product:nth-child(#{$i}) & {
-      background-image: url('#{$img-path}#{$i}.jpg');
+      background-image: url('#{$img-path-coffee}#{$i}.jpg');
+    }
+  }
+
+  @for $i from 9 through 12 {
+    .tabs__product:nth-child(#{$i}) & {
+      background-image: url('#{$img-path-tea}#{$i}.jpg');
+    }
+  }
+
+  @for $i from 13 through 20 {
+    .tabs__product:nth-child(#{$i}) & {
+      background-image: url('#{$img-path-dessert}#{$i}.jpg');
     }
   }
 }
@@ -196,7 +246,7 @@
   border: 1px solid $color-border-dark;
   border-radius: 50%;
 
-  @include media-tablet {
-    display: block;
-  }
+  // @include media-tablet {
+  //   display: block;
+  // }
 }
