@@ -164,14 +164,6 @@
   &_hidden {
     display: none;
   }
-
-  @include media-tablet {
-    @for $i from 5 through 8 {
-      &:nth-child(#{$i}) {
-        display: none;
-      }
-    }
-  }
 }
 .tabs__img-container {
   height: 310px;
@@ -254,7 +246,7 @@
   border: 1px solid $color-border-dark;
   border-radius: 50%;
 
-  @include media-tablet {
-    display: block;
-  }
+  // @include media-tablet {
+  //   display: block;
+  // }
 }

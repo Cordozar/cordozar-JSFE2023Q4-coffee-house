@@ -852,20 +852,6 @@ a {
 .tabs__product_hidden {
   display: none;
 }
-@media (max-width: 768px) {
-  .tabs__product:nth-child(5) {
-    display: none;
-  }
-  .tabs__product:nth-child(6) {
-    display: none;
-  }
-  .tabs__product:nth-child(7) {
-    display: none;
-  }
-  .tabs__product:nth-child(8) {
-    display: none;
-  }
-}
 
 .tabs__img-container {
   height: 310px;
@@ -996,11 +982,6 @@ a {
   background-position: center;
   border: 1px solid #665f55;
   border-radius: 50%;
-}
-@media (max-width: 768px) {
-  .tabs__refresh {
-    display: block;
-  }
 }
 
 .burger::after, .burger::before {
