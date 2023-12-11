@@ -31,7 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const allTabProducts = document.querySelectorAll(
       `[data-category="${curTab.textContent.toLowerCase()}"]`
     );
-    console.log(allTabProducts);
 
     allTabProducts.forEach((el) => {
       el.classList.remove('hidden');
