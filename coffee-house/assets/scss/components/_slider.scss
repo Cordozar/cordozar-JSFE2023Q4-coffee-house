@@ -11,7 +11,7 @@
   margin-bottom: 40px;
 
   @include media-mobile {
-    justify-content: center
+    justify-content: center;
   }
 }
 .slider__arrow {
@@ -62,7 +62,9 @@
 }
 .slider__inner {
   display: flex;
+  transition: all 0.3s ease-in;
 }
+
 .slider__slide {
 }
 .slide {
@@ -74,6 +76,7 @@
     max-width: 348px;
   }
 }
+
 .slide__img {
   margin-bottom: 20px;
 
@@ -104,6 +107,7 @@
   height: 4px;
   background-color: $color-border-light;
   border-radius: 2px;
+  cursor: pointer;
 
   &_select {
     background-color: $color-border-dark;
