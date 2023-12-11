@@ -62,8 +62,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       showAllProducts();
-      for (let i = 0; i < tabProducts.length; i += 1) {
-        tabProducts[i].classList.remove('hidden');
+      for (let i = 0; i < curProducts.length; i += 1) {
+        curProducts[i].classList.remove('hidden');
       }
       refresh.classList.remove('show');
       refresh.classList.add('hidden');
