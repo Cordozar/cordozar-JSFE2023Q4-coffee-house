@@ -8,6 +8,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+.body-no-scroll {
+  overflow: hidden;
+}
+
 ul {
   margin: 0;
   padding-left: 0;
