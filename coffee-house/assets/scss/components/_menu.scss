@@ -131,6 +131,10 @@
     }
   }
 
+  .tabs__tab_select & {
+    background-color: $color-bg-body;
+  }
+
   .tabs__tab_select-modal & {
     background-color: $color-bg-body;
   }

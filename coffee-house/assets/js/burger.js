@@ -1,8 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  alert(
-    'Проверяющий, прошу, по взможности, не смотреть пока мою работу, хочу доделать.'
-  );
-
   // BurgerMenu
 
   const burgerBtn = document.querySelector('.burger');
@@ -26,12 +22,15 @@ window.addEventListener('DOMContentLoaded', () => {
     dropDownMenu.classList.add('dropdown-menu');
     const checkDropDownMenu = document.querySelector('.dropdown-menu');
 
-    if (windowWidth <= tabletWindowWidth) {
+    const isChildInParent = header.querySelector('.dropdown-menu') !== null;
+
+    if (windowWidth <= tabletWindowWidth && !isChildInParent) {
       dropDownMenu.append(navHeader);
       dropDownMenu.append(menuBtnHeader);
 
       header.append(dropDownMenu);
-    } else {
+    }
+    if (windowWidth > tabletWindowWidth) {
       logo.after(menuBtnHeader);
       logo.after(navHeader);
 
@@ -78,5 +77,11 @@ window.addEventListener('DOMContentLoaded', () => {
       toggleDropDownMenu();
       toggleScroll();
     });
+  });
+
+  document.querySelector('.header__menu').addEventListener('click', () => {
+    changeMenuImg();
+    toggleDropDownMenu();
+    toggleScroll();
   });
 });
