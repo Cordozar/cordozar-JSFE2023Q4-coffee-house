@@ -816,6 +816,9 @@ a {
     background-color: #e1d4c9;
   }
 }
+.tabs__tab_select .tabs__tab-icon {
+  background-color: #e1d4c9;
+}
 .tabs__tab_select-modal .tabs__tab-icon {
   background-color: #e1d4c9;
 }
@@ -1238,6 +1241,11 @@ a {
 }
 .header__menu_select {
   pointer-events: none;
+}
+@media (max-width: 768px) {
+  .header__menu_select {
+    pointer-events: all;
+  }
 }
 @media (max-width: 768px) {
   .header__menu {

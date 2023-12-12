@@ -1,24 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-  alert('Проверяющий, прошу, по взможности, не смотреть пока мою работу, хочу доделать.')
   const modal = document.querySelector('.modal');
   const body = document.querySelector('body');
-  const productsContainer = document.querySelector('.tabs__products');
-
-  function getIndexSelectCard() {
-    let indexSelectProduct;
-
-    productsContainer.addEventListener('click', (e) => {
-      const products = document.querySelectorAll('.tabs__product');
-
-      products.forEach((el, i) => {
-        if (e.target.closest('.tabs__product') === el) {
-          indexSelectProduct = i;
-        }
-      });
-    });
-
-    return indexSelectProduct;
-  }
+  const productsContainer = document.getElementById('tabsContainer');
 
   function render(index) {
     function createModal(cards) {
@@ -97,103 +80,128 @@ window.addEventListener('DOMContentLoaded', () => {
 
   closeModal();
 
+  let indexSelectProduct;
+
+  productsContainer.addEventListener('click', (e) => {
+    const products = document.querySelectorAll('.tabs__product');
+
+    products.forEach((el, i) => {
+      if (e.target.closest('.tabs__product') === el) {
+        indexSelectProduct = i;
+      }
+    });
+  });
+
   function openModal() {
     modal.classList.remove('hidden');
     body.classList.add('body-no-scroll');
+    render(indexSelectProduct);
+
+    setTimeout(() => {
+      const bgImg = getComputedStyle(
+        document.querySelectorAll('.tabs__img')[indexSelectProduct]
+      ).backgroundImage;
+      const modalImg = modal.querySelector('.modal__img');
+      modalImg.style.backgroundImage = bgImg;
+
+      handleModalContent();
+    }, 5);
   }
 
-  const closeBtn = document.querySelector('.modal__close');
-  // const productsParent = document.querySelector('.tabs__products');
-
-  closeBtn.addEventListener('click', () => {
-    closeModal();
+  productsContainer.addEventListener('click', (e) => {
+    if (e.target.closest('.tabs__product')) {
+      openModal();
+    }
   });
 
-  modal.addEventListener('click', (e) => {
-    if (!e.target.closest('.modal__content')) {
+  function handleModalContent() {
+    const closeBtn = document.querySelector('.modal__close');
+    closeBtn.addEventListener('click', () => {
       closeModal();
-    }
-  });
+    });
 
-  productsContainer.addEventListener('click', () => {
-    // console.log(getIndexSelectCard());
-    openModal();
-  });
-
-  const optionsContainersFirst = modal.querySelectorAll(
-    '.tabs__flex-container'
-  )[0];
-  const optionsContainersSecond = modal.querySelectorAll(
-    '.tabs__flex-container'
-  )[1];
-  let optionsFirst = optionsContainersFirst.querySelectorAll('.tabs__tab');
-  const optionsSecond = optionsContainersSecond.querySelectorAll('.tabs__tab');
-
-  optionsFirst[0].classList.add('tabs__tab_select');
-
-  const price = modal.querySelector('.modal__price');
-  let startPrice = +Number.parseFloat(price.innerHTML.slice(1), 10);
-  const STEP_SIZE = 0.5;
-
-  function checkSelectedBtn() {
-    optionsFirst = optionsContainersFirst.querySelectorAll('.tabs__tab');
-    let result;
-    for (let i = 0; i < optionsFirst.length; i += 1) {
-      if (optionsFirst[i].classList.contains('tabs__tab_select')) {
-        result = i;
+    modal.addEventListener('click', (e) => {
+      if (!e.target.closest('.modal__content')) {
+        closeModal();
       }
+    });
+
+    const optionsContainersFirst = modal.querySelectorAll(
+      '.tabs__flex-container'
+    )[0];
+    const optionsContainersSecond = modal.querySelectorAll(
+      '.tabs__flex-container'
+    )[1];
+    let optionsFirst = optionsContainersFirst.querySelectorAll('.tabs__tab');
+    const optionsSecond =
+      optionsContainersSecond.querySelectorAll('.tabs__tab');
+
+    optionsFirst[0].classList.add('tabs__tab_select');
+
+    const price = modal.querySelector('.modal__price');
+    let startPrice = +Number.parseFloat(price.innerHTML.slice(1), 10);
+    const STEP_SIZE = 0.5;
+
+    function checkSelectedBtn() {
+      optionsFirst = optionsContainersFirst.querySelectorAll('.tabs__tab');
+      let result;
+      for (let i = 0; i < optionsFirst.length; i += 1) {
+        if (optionsFirst[i].classList.contains('tabs__tab_select')) {
+          result = i;
+        }
+      }
+      return result;
     }
-    return result;
-  }
 
-  function updatePrice() {
-    price.innerHTML = `$${startPrice.toFixed(2)}`;
-  }
+    function updatePrice() {
+      price.innerHTML = `$${startPrice.toFixed(2)}`;
+    }
 
-  optionsContainersFirst.addEventListener('click', (e) => {
-    const target = e.target;
-    const prevClick = checkSelectedBtn(optionsFirst);
+    optionsContainersFirst.addEventListener('click', (e) => {
+      const target = e.target;
+      const prevClick = checkSelectedBtn(optionsFirst);
 
-    if (target.closest('.tabs__tab')) {
-      optionsFirst.forEach((btn, i) => {
-        if (target.closest('.tabs__tab') === btn) {
-          btn.classList.add('tabs__tab_select');
-          if (prevClick < i) {
-            for (let j = 0; j < i - prevClick; j += 1) {
-              startPrice += STEP_SIZE;
+      if (target.closest('.tabs__tab')) {
+        optionsFirst.forEach((btn, i) => {
+          if (target.closest('.tabs__tab') === btn) {
+            btn.classList.add('tabs__tab_select');
+            if (prevClick < i) {
+              for (let j = 0; j < i - prevClick; j += 1) {
+                startPrice += STEP_SIZE;
+              }
+              price.innerHTML = `$${startPrice.toFixed(2)}`;
+            } else if (prevClick > i) {
+              for (let j = 0; j < prevClick - i; j += 1) {
+                startPrice -= STEP_SIZE;
+              }
             }
-            price.innerHTML = `$${startPrice.toFixed(2)}`;
-          } else if (prevClick > i) {
-            for (let j = 0; j < prevClick - i; j += 1) {
+          } else {
+            btn.classList.remove('tabs__tab_select');
+          }
+        });
+      }
+
+      updatePrice();
+    });
+
+    optionsContainersSecond.addEventListener('click', (e) => {
+      const target = e.target;
+
+      if (target.closest('.tabs__tab')) {
+        optionsSecond.forEach((btn) => {
+          if (target.closest('.tabs__tab') === btn) {
+            if (!target.closest('.tabs__tab_select-modal')) {
+              btn.classList.add('tabs__tab_select-modal');
+              startPrice += STEP_SIZE;
+            } else {
+              btn.classList.remove('tabs__tab_select-modal');
               startPrice -= STEP_SIZE;
             }
           }
-        } else {
-          btn.classList.remove('tabs__tab_select');
-        }
-      });
-    }
+        });
+      }
 
-    updatePrice();
-  });
-
-  optionsContainersSecond.addEventListener('click', (e) => {
-    const target = e.target;
-
-    if (target.closest('.tabs__tab')) {
-      optionsSecond.forEach((btn) => {
-        if (target.closest('.tabs__tab') === btn) {
-          if (!target.closest('.tabs__tab_select-modal')) {
-            btn.classList.add('tabs__tab_select-modal');
-            startPrice += STEP_SIZE;
-          } else {
-            btn.classList.remove('tabs__tab_select-modal');
-            startPrice -= STEP_SIZE;
-          }
-        }
-      });
-    }
-
-    updatePrice();
-  });
+      updatePrice();
+    });
+  }
 });
