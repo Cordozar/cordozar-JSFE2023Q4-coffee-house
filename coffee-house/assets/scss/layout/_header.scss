@@ -56,6 +56,10 @@
     @extend %underlineDark;
 
     pointer-events: none;
+
+    @include media-tablet {
+      pointer-events: all;
+    }
   }
   
   @include media-tablet {
